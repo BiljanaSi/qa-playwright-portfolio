@@ -1,0 +1,18 @@
+const { test, expect } = require('@playwright/test');
+const { LoginPage } = require('../../pages/loginPage');
+const { InventoryPage } = require('../../pages/inventoryPage');
+
+test('Remove product from cart using POM', async ({ page }) => {
+  const loginPage = new LoginPage(page);
+  const inventoryPage = new InventoryPage(page);
+
+  await loginPage.goto();
+  await loginPage.login('standard_user', 'secret_sauce');
+
+  await inventoryPage.addProductByIndex(0);
+  await inventoryPage.openCart();
+
+  await page.locator('.cart_item button').click(); // remove button
+
+  await expect(page.locator('.cart_item')).toHaveCount(0);
+});
