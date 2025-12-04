@@ -10,5 +10,12 @@
   "devDependencies": {
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1"
-  }
+  },
+
+  "scripts": {
+    "test:ui:report": "npx playwright test --config=./playwright.config.ts --project=ui --reporter=html",
+    
+
+    "test:api:report": "npx playwright test test/api --config=./playwright.config.ts --reporter=html --output=api-report"
+}
 }
