@@ -61,4 +61,29 @@ Run with debug logs
 
 npx playwright test --debug
 
+### 📊 Test Reporting (Playwright HTML Report)
 
+This project uses Playwright to generate a detailed, interactive HTML report after each test run. This report provides deep insights, error messages, and artifacts (like screenshots and videos) for failed tests.
+
+**To view the latest generated report:**
+
+1.  **Install Dependencies:** Ensure all necessary packages are installed.
+    
+    npm install
+    
+2.  **Run the Tests:** Execute your test script (which generates the report files).
+  
+    npm run test:ui:report 
+    # Or your basic test command: npx playwright test
+
+3.  **Open the Report in Browser:** Use the Playwright CLI command to launch the report on a local server.
+   
+    npx playwright show-report
+
+This command will automatically open the full, interactive report in your default web browser.
+
+### 🖼️ Latest Test Run Summary
+
+A quick overview of the results from the last test execution:
+
+![Summary of the last Playwright HTML report](assets/playwright_report_summary.png)
