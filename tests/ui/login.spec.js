@@ -9,9 +9,7 @@ test('successful login with POM', async ({ page }) => {
   await loginPage.goto();
   await loginPage.login('standard_user', 'secret_sauce');
 
-  // Provjera da smo na inventory stranici
   await expect(page).toHaveURL(/inventory/);
 
-  // Screenshot
   await page.screenshot({ path: 'screenshots/saucedemo-login-success.png', fullPage: true });
 });

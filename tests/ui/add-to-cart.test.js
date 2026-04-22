@@ -7,17 +7,17 @@ test('add product to cart on saucedemo', async ({ page }) => {
   await page.fill('#password', 'secret_sauce');
   await page.click('#login-button');
 
-  // Step 2: Add first product to cart
+  
   const firstProduct = page.locator('.inventory_item').first();
   await firstProduct.locator('button').click(); // klik na Add to cart
 
-  // Step 3: Open cart
+  
   await page.click('.shopping_cart_link');
 
-  // Step 4: Verify product is in cart
+
   const cartItem = page.locator('.cart_item');
   await expect(cartItem).toHaveCount(1);
 
-  // Step 5: Screenshot for portfolio
+
   await page.screenshot({ path: 'screenshots/saucedemo-cart.png', fullPage: true });
 });

@@ -8,17 +8,17 @@ const BASE_URL = 'https://fakestoreapi.com';
 test('GET /products should return all products', async ({ request }) => {
   const response = await request.get(`${BASE_URL}/products`);
 
-  // 1. Check status code
+
   expect(response.status()).toBe(200);
 
-  // 2. Parse JSON response
+ 
   const data = await response.json();
 
-  // 3. Basic assertions
+ 
   expect(Array.isArray(data)).toBe(true);
   expect(data.length).toBeGreaterThan(0);
 
-  // 4. Check first product has id, title, price
+  
   const first = data[0];
   expect(first).toHaveProperty('id');
   expect(first).toHaveProperty('title');
