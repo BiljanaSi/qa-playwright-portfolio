@@ -11,8 +11,22 @@ export default defineConfig({
     timeout: 10000,
   },
   
-  testDir: './test',
+  testDir: './tests',
   fullyParallel: true,
+  projects: [
+    {
+      name: 'API',
+      testMatch: 'api/**/*.spec.js', 
+      
+    },
+    {
+      name: 'UI',
+      testMatch: 'ui/**/*.spec.js', 
+      use: {
+        ...devices['Desktop Chrome'],
+      },
+    },
+  ],
   
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
