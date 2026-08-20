@@ -1,6 +1,6 @@
 # Playwright Test Suite
 
-[![Playwright Tests](https://github.com/BiljanaSi/qa-playwright-portfolio/actions/workflows/playwright.yml/badge.svg)](https://github.com/BiljanaSi/qa-playwright-portfolio/actions/workflows/playwright.yml)
+
 
 This repository contains automated **UI and API tests** using Playwright.  
 It covers testing of [FakeStore API](https://fakestoreapi.com/) and [Restful-Booker API](https://restful-booker.herokuapp.com/), as well as any UI interactions you may add.
